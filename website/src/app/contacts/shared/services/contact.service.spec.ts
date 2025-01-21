@@ -3,7 +3,6 @@ import { Http, BaseRequestOptions, Response, ResponseOptions, RequestMethod } fr
 import { MockBackend, MockConnection } from '@angular/http/testing';
 
 import { ContactService } from './contact.service';
-import { of } from 'rxjs/observable/of';
 import { from } from 'rxjs/observable/from';
 
 describe('ContactsService', () => {
@@ -49,7 +48,6 @@ describe('ContactsService', () => {
 
         from(service.getContacts())
           .subscribe((contacts) => {
-            console.log(contacts)
             expect(contacts[0]).toEqual(mockContact);
           });
       }))
